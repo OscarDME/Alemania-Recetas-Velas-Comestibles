@@ -7,7 +7,7 @@
 // server reads it from the connection when the request arrives.
 (function(){
   var ENDPOINT = '/api/track';
-  var market = window.__market || { currency: 'USD', value: 27 };
+  var market = window.__market || { currency: 'EUR', value: 27 };
 
   var readCookie = function(name){
     var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
