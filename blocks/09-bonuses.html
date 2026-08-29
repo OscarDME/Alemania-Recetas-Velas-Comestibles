@@ -1,0 +1,118 @@
+<!-- ============ 09 — BONUSES ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .mbn *{margin:0;padding:0;box-sizing:border-box;}
+  .mbn{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-soft:#a3a57e;--olive-wash:#eceedd;--cream:#f7f3e6;--cream-lt:#fffdf6;
+    --terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;--green:#5f7f4e;
+    --ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--olive-wash);
+    padding:16px 22px 14px;-webkit-font-smoothing:antialiased;}
+  .mbn-wrap{max-width:1000px;margin:0 auto;}
+  .mbn-head{text-align:center;max-width:660px;margin:0 auto 30px;}
+  .mbn-eyebrow{display:inline-block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:14px;}
+  .mbn-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(28px,4.4vw,44px);line-height:1.14;color:var(--ink);margin-bottom:12px;}
+  .mbn-h2 em{font-style:italic;color:var(--terra-deep);}
+  .mbn-lede{font-size:15px;color:var(--ink-soft);}
+  .mbn-banner{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;max-width:620px;margin:0 auto 40px;
+    background:var(--gold);color:#3a2f14;border-radius:16px;padding:14px 22px;box-shadow:0 3px 0 #a87e33;}
+  .mbn-banner-label{font-size:11.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;}
+  .mbn-banner-val{font-family:'Fraunces',serif;font-size:26px;font-weight:700;line-height:1;}
+  .mbn-banner-tag{background:rgba(58,47,20,0.14);padding:6px 12px;border-radius:50px;font-size:11px;font-weight:800;letter-spacing:0.06em;}
+  .mbn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .mbn-card{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .4s ease,box-shadow .4s ease;}
+  .mbn-card:hover{transform:translateY(-5px);box-shadow:0 26px 52px -26px rgba(92,94,58,0.45);}
+  .mbn-img{width:100%;aspect-ratio:1/1;background:var(--olive-wash);position:relative;border-bottom:1px solid var(--line);overflow:hidden;}
+  .mbn-img img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;
+    transition:transform .6s ease;}
+  .mbn-card:hover .mbn-img img{transform:scale(1.04);}
+  .mbn-tag{position:absolute;top:14px;left:14px;z-index:2;background:var(--terra);color:var(--cream-lt);padding:7px 14px;border-radius:50px;
+    font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:800;box-shadow:0 8px 18px -6px rgba(168,114,74,0.5);}
+  .mbn-num{position:absolute;top:14px;right:14px;z-index:2;width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:15px;font-weight:600;line-height:1;
+    color:var(--cream-lt);background:rgba(46,47,36,0.6);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
+  .mbn-body{padding:24px 22px 26px;flex-grow:1;display:flex;flex-direction:column;}
+  .mbn-body h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--ink);line-height:1.25;margin-bottom:10px;}
+  .mbn-body p{font-size:13.5px;color:var(--ink-soft);line-height:1.6;flex-grow:1;margin-bottom:16px;}
+  .mbn-val{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:14px;border-top:1px solid var(--line);flex-wrap:wrap;}
+  .mbn-res{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--terra-deep);line-height:1.4;flex:1 1 60%;}
+  .mbn-free{display:inline-flex;align-items:center;gap:5px;background:rgba(95,127,78,0.12);border:1px solid rgba(95,127,78,0.4);color:var(--green);
+    font-size:11px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;padding:6px 12px;border-radius:50px;white-space:nowrap;}
+  @media(max-width:860px){.mbn-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto;}}
+</style>
+<section class="mbn">
+  <div class="mbn-wrap">
+    <div class="mbn-head">
+      <span class="mbn-eyebrow">Wait, there is more</span>
+      <h2 class="mbn-h2">You get the <em>Complete Plan.</em></h2>
+      <p class="mbn-lede">5 business tools included in your kit, at no additional cost.</p>
+    </div>
+
+    <div class="mbn-banner">
+      <span class="mbn-banner-label">&#127873; Total bonus value</span>
+      <span class="mbn-banner-val">$167</span>
+      <span class="mbn-banner-tag">Yours free today</span>
+    </div>
+
+    <div class="mbn-grid">
+      <article class="mbn-card">
+        <div class="mbn-img">
+          <span class="mbn-tag">Free</span><span class="mbn-num">01</span>
+          <img src="/images/photos/bonus-1-script.webp" alt="First Sale Script" loading="lazy">
+        </div>
+        <div class="mbn-body">
+          <h3>First Sale Script</h3>
+          <p>A complete breakdown of how to approach, pitch, and close your first order in under 7 days &#8212; even if you have zero customers right now.</p>
+          <div class="mbn-val"><span class="mbn-res">&#8594; Saves you weeks of trial and error</span><span class="mbn-free">&#10003; Included</span></div>
+        </div>
+      </article>
+
+      <article class="mbn-card">
+        <div class="mbn-img">
+          <span class="mbn-tag">Free</span><span class="mbn-num">02</span>
+          <img src="/images/photos/bonus-2-costs.webp" alt="Cost Tracking Map" loading="lazy">
+        </div>
+        <div class="mbn-body">
+          <h3>Cost Tracking Map</h3>
+          <p>All your primary costs clearly mapped out so you can see your exact profit margins at a glance.</p>
+          <div class="mbn-val"><span class="mbn-res">&#8594; Never sell at a loss again</span><span class="mbn-free">&#10003; Included</span></div>
+        </div>
+      </article>
+
+      <article class="mbn-card">
+        <div class="mbn-img">
+          <span class="mbn-tag">Free</span><span class="mbn-num">03</span>
+          <img src="/images/photos/bonus-3-packaging.webp" alt="High-Impact Packaging Guide" loading="lazy">
+        </div>
+        <div class="mbn-body">
+          <h3>High-Impact Packaging Guide</h3>
+          <p>Learn how to transform your candle into a premium-looking gift while spending less than $1 on packaging. Includes a vendor list.</p>
+          <div class="mbn-val"><span class="mbn-res">&#8594; Multiplies the perceived value of your product</span><span class="mbn-free">&#10003; Included</span></div>
+        </div>
+      </article>
+
+      <article class="mbn-card">
+        <div class="mbn-img">
+          <span class="mbn-tag">Free</span><span class="mbn-num">04</span>
+          <img src="/images/photos/bonus-4-promo.webp" alt="Ready-to-Use Promo Pack" loading="lazy">
+        </div>
+        <div class="mbn-body">
+          <h3>Ready-to-Use Promo Pack</h3>
+          <p>Professional videos and images pre-formatted for WhatsApp, Instagram, and local community groups. Just copy, add your name, and post.</p>
+          <div class="mbn-val"><span class="mbn-res">&#8594; Get your first orders without creating content from scratch</span><span class="mbn-free">&#10003; Included</span></div>
+        </div>
+      </article>
+
+      <article class="mbn-card">
+        <div class="mbn-img">
+          <span class="mbn-tag">Free</span><span class="mbn-num">05</span>
+          <img src="/images/photos/bonus-5-shopping.webp" alt="Zero-Hassle Shopping Guide" loading="lazy">
+        </div>
+        <div class="mbn-body">
+          <h3>Zero-Hassle Shopping Guide</h3>
+          <p>A comprehensive list of everything you need to buy to get started, complete with price ranges and recommended suppliers.</p>
+          <div class="mbn-val"><span class="mbn-res">&#8594; Make your first supply run without wasting a dime</span><span class="mbn-free">&#10003; Included</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

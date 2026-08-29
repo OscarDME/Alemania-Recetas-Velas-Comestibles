@@ -1,0 +1,99 @@
+<!-- ============ 02 — HERO / PROMISE ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .mah *{margin:0;padding:0;box-sizing:border-box;}
+  .mah{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-soft:#a3a57e;--olive-wash:#eceedd;
+    --cream:#f7f3e6;--cream-lt:#fffdf6;--terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;
+    --ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);
+    background:radial-gradient(ellipse at 50% -10%,rgba(125,127,82,0.12) 0%,transparent 55%),var(--cream-lt);
+    padding:10px 22px 14px;text-align:center;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased;}
+  .mah-inner{max-width:740px;margin:0 auto;}
+  .mah-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;margin-bottom:14px;
+    background:var(--white);border:1px solid var(--line);border-radius:50px;
+    font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:var(--terra);}
+  .mah-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .mah-h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,4.5vw,44px);line-height:1.15;letter-spacing:-0.015em;color:var(--ink);margin:0 auto 12px;max-width:20ch;}
+  .mah-h1 em{font-style:italic;color:var(--terra-deep);}
+  .mah-rule{width:64px;height:1px;background:linear-gradient(90deg,transparent,var(--olive),transparent);margin:0 auto 14px;}
+  .mah-sub{font-size:14px;line-height:1.6;color:var(--ink-soft);margin:0 auto 18px;max-width:58ch;font-weight:400;}
+  .mah-sub b{color:var(--ink);font-weight:600;}
+  .mah-trust{display:inline-flex;align-items:center;gap:12px;margin:0 auto 10px;padding:8px 16px;background:var(--olive-wash);border:1px solid var(--line);border-radius:50px;}
+  .mah-stars{color:var(--gold);letter-spacing:1.5px;font-size:12px;}
+  .mah-trust-txt{font-size:12px;color:var(--ink-soft);}
+  .mah-trust-txt b{color:var(--ink);font-weight:600;}
+  .mah-access{font-size:12px;color:var(--olive-deep);font-weight:600;margin-bottom:20px;letter-spacing:0.02em;}
+  .mah-media{position:relative;max-width:520px;margin:0 auto 30px;padding:12px;background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:0 26px 56px -28px rgba(92,94,58,0.4);}
+  .mah-frame{aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--olive-wash);position:relative;}
+  .mah-track{display:flex;flex-direction:column;width:100%;animation:mahScroll 30s linear infinite;will-change:transform;}
+  .mah-frame:hover .mah-track{animation-play-state:paused;}
+  .mah-slide{width:100%;flex-shrink:0;}
+  .mah-slide img{width:100%!important;aspect-ratio:4/3;object-fit:cover!important;display:block!important;}
+  @keyframes mahScroll{from{transform:translateY(0);}to{transform:translateY(-50%);}}
+  .mah-badge{position:absolute;bottom:-14px;right:-10px;z-index:3;background:var(--olive-deep);color:var(--cream-lt);padding:12px 18px;border-radius:14px;box-shadow:0 12px 26px -10px rgba(92,94,58,0.6);transform:rotate(-3deg);text-align:center;}
+  .mah-badge .n{font-family:'Fraunces',serif;font-size:22px;font-weight:600;line-height:1;}
+  .mah-badge .l{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;margin-top:3px;opacity:0.85;}
+  .mah-badge .n2{font-size:9px;letter-spacing:0.02em;text-transform:none;font-weight:500;margin-top:4px;opacity:0.75;max-width:16ch;}
+  .mah-cta{display:inline-flex!important;visibility:visible!important;opacity:1!important;align-items:center;justify-content:center;gap:10px;
+    text-decoration:none!important;background:var(--terra)!important;color:var(--cream-lt)!important;
+    padding:19px 38px;border-radius:50px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.02em;
+    box-shadow:0 16px 36px -12px rgba(168,114,74,0.6);border:none;cursor:pointer;transition:transform .3s ease,background .3s ease,box-shadow .3s ease;width:100%;max-width:440px;}
+  .mah-cta:hover{transform:translateY(-2px);background:var(--terra-deep)!important;color:var(--cream-lt)!important;box-shadow:0 22px 46px -12px rgba(140,92,56,0.65);}
+  .mah-cta .arrow{transition:transform .3s ease;}
+  .mah-cta:hover .arrow{transform:translateX(4px);}
+  .mah-meta{margin-top:16px;font-size:12.5px;color:var(--ink-soft);letter-spacing:0.02em;}
+  .mah-facts{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:16px;}
+  .mah-fact{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--olive-deep);background:var(--olive-wash);border:1px solid var(--line);padding:7px 14px;border-radius:50px;}
+  .mah-fact b{font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--terra-deep);}
+  @media(min-width:576px){.mah-cta{width:auto;font-size:16px;}}
+</style>
+
+<header class="mah">
+  <div class="mah-inner">
+    <div class="mah-pill"><span class="dot"></span> &#128640; 2026 Trend &#8212; An Untapped Market in Your City</div>
+
+    <h1 class="mah-h1">The Next Gourmet Delivery Phenomenon <em>is Here</em></h1>
+    <div class="mah-rule"></div>
+
+    <p class="mah-sub">Those who jumped on the hot cocoa bombs and candied strawberries trends early made a killing. Now, the wave has shifted to <b>Edible Gourmet Candles</b> &#8212; the highest-margin, most viral, and least competitive artisanal product of 2026.</p>
+
+    <div class="mah-trust">
+      <span class="mah-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="mah-trust-txt">Stories from early adopters who grabbed the opportunity <b>before anyone else</b></span>
+    </div>
+    <div class="mah-access">&#10024; Instant Access &#183; Lifetime Access &#183; No Monthly Fees</div>
+
+    <div class="mah-media">
+      <div class="mah-frame">
+        <div class="mah-track">
+          <div class="mah-slide"><img src="/images/photos/hero-1.webp" alt="Edible Gourmet Candle" loading="eager"></div>
+          <div class="mah-slide"><img src="/images/photos/hero-3.webp" alt="Edible Gourmet Candle" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/candle-home.webp" alt="Edible Gourmet Candle" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/smoked-cheddar.webp" alt="Edible Gourmet Candle" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/candle-order.webp" alt="Edible Gourmet Candle" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/hero-2.webp" alt="Edible Gourmet Candle" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/candle-whatsapp.webp" alt="Edible Gourmet Candle" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/chili-oil.webp" alt="Edible Gourmet Candle" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/hero-1.webp" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/hero-3.webp" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/candle-home.webp" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/smoked-cheddar.webp" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/candle-order.webp" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/hero-2.webp" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/candle-whatsapp.webp" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="mah-slide"><img src="/images/photos/chili-oil.webp" alt="" aria-hidden="true" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="mah-badge"><div class="n">1</div><div class="l">Sale</div><div class="n2">covers your entire investment in the kit</div></div>
+    </div>
+
+    <a href="#pricing" class="mah-cta">Click Here for More Information <span class="arrow">&#8594;</span></a>
+    <div class="mah-meta">Instant Access &#183; No Monthly Fees &#183; Lifetime Access</div>
+
+    <div class="mah-facts">
+      <span class="mah-fact"><b>700%</b> Profit Margin</span>
+      <span class="mah-fact"><b>200</b> Recipes</span>
+      <span class="mah-fact"><b>$27</b> First Sale</span>
+    </div>
+  </div>
+</header>

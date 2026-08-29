@@ -1,0 +1,166 @@
+<!-- ============ 10 — OFFER ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .mof *{margin:0;padding:0;box-sizing:border-box;}
+  .mof{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-wash:#eceedd;--cream:#f7f3e6;--cream-lt:#fffdf6;
+    --terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;--green:#5f7f4e;--green-deep:#4a6640;
+    --ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);
+    background:radial-gradient(ellipse at 20% 0%,rgba(212,162,76,0.14) 0%,transparent 55%),
+               radial-gradient(ellipse at 80% 100%,rgba(125,127,82,0.14) 0%,transparent 55%),var(--cream);
+    padding:10px 20px 16px;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased;scroll-margin-top:20px;}
+  .mof-top{max-width:560px;margin:0 auto 34px;text-align:center;}
+  .mof-eyebrow{display:inline-block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:16px;}
+  .mof-pill{display:inline-block;padding:10px 24px;border-radius:12px;font-weight:800;letter-spacing:0.08em;font-size:15px;
+    background:var(--gold);color:#3a2f14;box-shadow:0 3px 0 #a87e33;}
+  .mof-script{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:22px;color:var(--terra-deep);margin-top:8px;}
+  .mof-sub{font-size:15px;color:var(--ink-soft);margin:14px 0 24px;}
+  .mof-timer{border:2px dashed var(--terra);border-radius:16px;padding:16px 20px;background:var(--white);display:inline-block;}
+  .mof-timer-lbl{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra-deep);font-weight:800;margin-bottom:12px;}
+  .mof-clock{display:flex;align-items:center;justify-content:center;gap:6px;}
+  .mof-unit{background:var(--cream-lt);border:1px solid var(--line);border-radius:10px;padding:10px 14px 8px;min-width:64px;display:flex;flex-direction:column;align-items:center;}
+  .mof-unit .n{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);line-height:1;}
+  .mof-unit .l{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px;font-weight:700;}
+  .mof-sep{font-family:'Fraunces',serif;font-size:22px;color:var(--terra);font-weight:600;margin-top:-8px;}
+
+  .mof-card{max-width:470px;margin:0 auto;background:var(--cream-lt);border:3px solid var(--terra);border-radius:24px;
+    padding:28px 26px 26px;text-align:center;position:relative;box-shadow:0 24px 60px -24px rgba(168,114,74,0.5);}
+  .mof-eyebrow-plan{font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:6px;}
+  .mof-name{font-family:'Fraunces',serif;font-size:clamp(24px,5.4vw,32px);font-weight:700;color:var(--terra-deep);line-height:1.05;letter-spacing:0.02em;margin:8px 0 22px;text-transform:uppercase;}
+  .mof-seclbl{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;text-align:left;margin:14px 0 6px;}
+  .mof-list{list-style:none;padding:14px 16px;background:var(--olive-wash);border-radius:16px;text-align:left;margin-bottom:6px;}
+  .mof-list li{display:flex;align-items:flex-start;gap:9px;padding:7px 0;font-size:13.5px;color:var(--ink);line-height:1.5;font-weight:500;}
+  .mof-list li .ck{color:var(--green);font-weight:800;flex-shrink:0;}
+  .mof-guarantee{margin:16px 0 6px;padding:11px 12px;background:rgba(95,127,78,0.16);border:1px solid rgba(95,127,78,0.4);border-radius:10px;
+    font-size:12.5px;font-weight:700;color:var(--green-deep);}
+  .mof-total-lbl{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;margin-top:20px;}
+  .mof-price-old{font-family:'Fraunces',serif;font-size:16px;color:var(--ink-soft);margin-top:4px;}
+  .mof-price-old s{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:var(--terra);}
+  .mof-now{font-family:'Fraunces',serif;font-size:clamp(38px,10vw,58px);font-weight:700;color:var(--ink);line-height:1.1;letter-spacing:-0.02em;margin:4px 0;white-space:nowrap;}
+  .mof-now sup{font-size:0.45em;top:-0.7em;position:relative;}
+  .mof-installment{font-size:12px;color:var(--ink-soft);margin-bottom:18px;}
+  .mof-bonus{border:2px dashed var(--gold);background:rgba(212,162,76,0.1);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:14px;margin-bottom:22px;text-align:left;}
+  .mof-bonus-ic{width:46px;height:46px;background:var(--white);border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;}
+  .mof-bonus-t{font-weight:800;font-size:11.5px;letter-spacing:0.05em;color:var(--ink);line-height:1.3;margin-bottom:6px;}
+  .mof-bonus-m{display:flex;align-items:center;gap:8px;font-size:11px;flex-wrap:wrap;}
+  .mof-bonus-m s{color:var(--ink-soft);}
+  .mof-bonus-today{background:var(--green);color:var(--cream-lt);padding:4px 8px;border-radius:4px;font-weight:800;letter-spacing:0.06em;font-size:10px;}
+  .mof-btn{display:flex!important;visibility:visible!important;opacity:1!important;flex-direction:column;align-items:center;gap:4px;width:100%;
+    text-decoration:none!important;background:var(--green)!important;color:var(--cream-lt)!important;padding:18px 20px;border-radius:16px;border:none;
+    box-shadow:0 4px 0 var(--green-deep),0 12px 26px -6px rgba(95,127,78,0.5);transition:transform .3s ease,background .3s ease;cursor:pointer;font-family:'Inter',sans-serif;}
+  .mof-btn:hover{background:var(--green-deep)!important;transform:translateY(-2px);color:var(--cream-lt)!important;}
+  .mof-btn .main{font-weight:800;font-size:14px;letter-spacing:0.02em;}
+  .mof-btn .sub{font-size:11px;letter-spacing:0.05em;opacity:0.9;font-weight:500;}
+  .mof-footer{text-align:center;max-width:560px;margin:34px auto 0;}
+  .mof-footer-q{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--olive-deep);margin-bottom:8px;}
+  .mof-footer-p{font-size:12px;color:var(--ink-soft);font-weight:600;letter-spacing:0.04em;}
+  @media(max-width:520px){
+    .mof-card{padding:30px 20px 22px;}
+    .mof-unit{min-width:56px;padding:8px 10px 6px;}
+    .mof-unit .n{font-size:22px;}
+    .mof-now{font-size:clamp(34px,11vw,46px);}
+  }
+</style>
+
+<section class="mof" id="pricing">
+  <div class="mof-top">
+    <span class="mof-eyebrow">Secure your access now</span>
+    <div><span class="mof-pill">LAUNCH OFFER</span></div>
+    <div class="mof-script">spots currently open</div>
+    <p class="mof-sub">One-time payment. No monthly fees.</p>
+
+    <div class="mof-timer">
+      <div class="mof-timer-lbl">&#9201; This offer expires in</div>
+      <div class="mof-clock">
+        <div class="mof-unit"><span class="n" id="timer-hours">00</span><span class="l">Hours</span></div>
+        <span class="mof-sep">:</span>
+        <div class="mof-unit"><span class="n" id="timer-minutes">00</span><span class="l">Minutes</span></div>
+        <span class="mof-sep">:</span>
+        <div class="mof-unit"><span class="n" id="timer-seconds">00</span><span class="l">Seconds</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mof-card">
+    <div class="mof-eyebrow-plan">&#128293; Includes all 200 recipes + all 5 bonuses</div>
+    <h3 class="mof-name">The Complete Kit</h3>
+
+    <div class="mof-seclbl">Everything you get</div>
+    <ul class="mof-list">
+      <li><span class="ck">&#10003;</span> <span>200 tested recipes ready for sale</span></li>
+      <li><span class="ck">&#10003;</span> <span>Lifetime access &#8212; no monthly fees</span></li>
+      <li><span class="ck">&#10003;</span> <span>All 5 premium bonuses included</span></li>
+      <li><span class="ck">&#10003;</span> <span>The Edible Wick Secret (your biggest market differentiator)</span></li>
+      <li><span class="ck">&#10003;</span> <span>Sales Channel Manual (Instagram, TikTok, WhatsApp, Facebook)</span></li>
+      <li><span class="ck">&#10003;</span> <span>Gourmet Menu &amp; Composition Guide</span></li>
+      <li><span class="ck">&#10003;</span> <span>The Profit Calendar: Guide to High-Sales Holidays</span></li>
+      <li><span class="ck">&#10003;</span> <span>Ready-to-Post Sales Templates</span></li>
+    </ul>
+
+    <div class="mof-guarantee">&#128737;&#65039; 14-Day Guarantee: 100% Satisfaction or Your Money Back</div>
+
+    <div class="mof-total-lbl">Total investment</div>
+    <div class="mof-price-old">Standard price <s>$97</s></div>
+    <div class="mof-now"><sup>$</sup>27</div>
+    <div class="mof-installment">One single sale pays for everything</div>
+
+    <div class="mof-bonus">
+      <span class="mof-bonus-ic" aria-hidden="true">&#127873;</span>
+      <div>
+        <div class="mof-bonus-t">PLUS 5 EXCLUSIVE<br>FREE BONUSES</div>
+        <div class="mof-bonus-m"><s>Value: $167</s><span class="mof-bonus-today">TODAY: FREE</span></div>
+      </div>
+    </div>
+
+    <a href="https://www.oriopay.app/p/edible-candle-recipes" class="mof-btn" data-checkout>
+      <span class="main">Click Here to Get Started</span>
+      <span class="sub">Secure Checkout &#183; Instant Access</span>
+    </a>
+  </div>
+
+  <div class="mof-footer">
+    <p class="mof-footer-q">"Invest today. If you don't love it, we'll refund your money."</p>
+    <p class="mof-footer-p">&copy; Secure Payment</p>
+  </div>
+</section>
+
+{% raw %}
+<script>
+(function() {
+  var s = document.currentScript.previousElementSibling;
+  if(!s) return;
+  var sectionIdentifier = 'mof_timer_candles_v1';
+  var hoursToSet = 14, minutesToSet = 59, secondsToSet = 37;
+  var d = { h: s.querySelector('#timer-hours'), m: s.querySelector('#timer-minutes'), sec: s.querySelector('#timer-seconds') };
+  if(!d.h) return;
+
+  function getTimeRemaining(endtime) {
+    var total = Date.parse(endtime) - Date.now();
+    if (total <= 0) return { total: 0, hours: 0, minutes: 0, seconds: 0 };
+    return {
+      total: total,
+      seconds: Math.floor((total / 1000) % 60),
+      minutes: Math.floor((total / 1000 / 60) % 60),
+      hours: Math.floor(total / (1000 * 60 * 60))
+    };
+  }
+
+  var deadline;
+  try { deadline = localStorage.getItem(sectionIdentifier); } catch (e) { deadline = null; }
+  if (!deadline || isNaN(Date.parse(deadline)) || Date.parse(deadline) < Date.now()) {
+    deadline = new Date(Date.now() + hoursToSet*3600000 + minutesToSet*60000 + secondsToSet*1000).toISOString();
+    try { localStorage.setItem(sectionIdentifier, deadline); } catch (e) {}
+  }
+
+  function updateClock() {
+    var t = getTimeRemaining(deadline);
+    d.h.textContent = ('0' + t.hours).slice(-2);
+    d.m.textContent = ('0' + t.minutes).slice(-2);
+    d.sec.textContent = ('0' + t.seconds).slice(-2);
+    if (t.total <= 0) clearInterval(timeinterval);
+  }
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+})();
+</script>
+{% endraw %}

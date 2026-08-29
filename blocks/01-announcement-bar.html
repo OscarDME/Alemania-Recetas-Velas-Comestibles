@@ -1,0 +1,31 @@
+<!-- ============ 01 — ANNOUNCEMENT BAR ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .mab *{margin:0;padding:0;box-sizing:border-box;}
+  .mab{--olive:#7d7f52;--olive-deep:#5c5e3a;--cream:#f7f3e6;--cream-lt:#fffdf6;--terra:#a8724a;--gold:#d4a24c;--white:#fff;
+    font-family:'Inter',sans-serif;background:var(--olive-deep);color:var(--cream-lt);
+    padding:11px 16px;overflow:hidden;position:relative;-webkit-font-smoothing:antialiased;}
+  .mab-track{display:flex;width:max-content;animation:mabScroll 32s linear infinite;}
+  .mab-group{display:flex;align-items:center;gap:26px;padding-right:26px;flex-shrink:0;}
+  .mab-item{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;white-space:nowrap;}
+  .mab-item .sep{color:var(--gold);}
+  .mab-sub{font-size:12.5px;letter-spacing:0.02em;font-weight:400;color:#e6e2d2;white-space:nowrap;font-family:'Fraunces',serif;font-style:italic;}
+  .mab-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  @keyframes mabScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+</style>
+<div class="mab">
+  <div class="mab-track">
+    <div class="mab-group">
+      <span class="mab-item">&#10022; Spots Open <span class="sep">&#8212;</span> The Window of Opportunity Is Closing Soon &#10022;</span>
+      <span class="mab-dot"></span>
+      <span class="mab-sub">200 Proven Recipes &#183; Instant Access &#183; Zero Competition &#183; 700% Profit Margins &#183; 14-Day Guarantee</span>
+      <span class="mab-dot"></span>
+    </div>
+    <div class="mab-group">
+      <span class="mab-item">&#10022; Spots Open <span class="sep">&#8212;</span> The Window of Opportunity Is Closing Soon &#10022;</span>
+      <span class="mab-dot"></span>
+      <span class="mab-sub">200 Proven Recipes &#183; Instant Access &#183; Zero Competition &#183; 700% Profit Margins &#183; 14-Day Guarantee</span>
+      <span class="mab-dot"></span>
+    </div>
+  </div>
+</div>

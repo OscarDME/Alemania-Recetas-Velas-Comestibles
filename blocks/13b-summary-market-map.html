@@ -1,0 +1,67 @@
+<!-- ============ 13b — THE BOTTOM LINE / MARKET MAP ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .msm *{margin:0;padding:0;box-sizing:border-box;}
+  .msm{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-wash:#eceedd;--cream:#f7f3e6;--cream-lt:#fffdf6;
+    --terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;--green:#5f7f4e;--green-deep:#4a6640;
+    --ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--olive-wash);
+    padding:44px 22px 40px;text-align:center;-webkit-font-smoothing:antialiased;}
+  .msm-wrap{max-width:900px;margin:0 auto;}
+  .msm-eyebrow{display:inline-block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra);font-weight:700;margin-bottom:14px;}
+  .msm-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(28px,4.4vw,44px);line-height:1.14;color:var(--ink);margin-bottom:18px;}
+  .msm-h2 em{font-style:italic;color:var(--terra-deep);}
+  .msm-lede{font-size:15.5px;line-height:1.75;color:var(--ink-soft);max-width:60ch;margin:0 auto 40px;}
+  .msm-map{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:36px;}
+  .msm-cell{background:var(--cream-lt);border:1px solid var(--line);border-radius:18px;padding:28px 20px 24px;
+    transition:transform .4s ease,box-shadow .4s ease;}
+  .msm-cell:hover{transform:translateY(-4px);box-shadow:0 22px 44px -22px rgba(92,94,58,0.4);}
+  .msm-cell.hl{border:3px solid var(--terra);background:var(--white);box-shadow:0 22px 52px -24px rgba(168,114,74,0.5);}
+  .msm-ic{font-size:34px;line-height:1;margin-bottom:14px;}
+  .msm-lbl{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;margin-bottom:8px;}
+  .msm-cell.hl .msm-lbl{color:var(--terra-deep);}
+  .msm-title{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--ink);line-height:1.25;margin-bottom:16px;}
+  .msm-status{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:800;
+    padding:7px 14px;border-radius:50px;background:var(--olive-wash);border:1px solid var(--line);color:var(--ink-soft);}
+  .msm-status.open{background:var(--terra);border-color:var(--terra);color:var(--cream-lt);}
+  .msm-quote{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,3vw,24px);color:var(--olive-deep);margin-bottom:30px;}
+  .msm-cta{display:inline-flex!important;visibility:visible!important;opacity:1!important;align-items:center;justify-content:center;gap:10px;
+    text-decoration:none!important;background:var(--terra)!important;color:var(--cream-lt)!important;
+    padding:18px 38px;border-radius:50px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;
+    box-shadow:0 16px 36px -12px rgba(168,114,74,0.6);border:none;cursor:pointer;transition:transform .3s ease,background .3s ease;}
+  .msm-cta:hover{transform:translateY(-2px);background:var(--terra-deep)!important;color:var(--cream-lt)!important;}
+  .msm-cta .arrow{transition:transform .3s ease;}
+  .msm-cta:hover .arrow{transform:translateX(4px);}
+  @media(max-width:760px){.msm-map{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto;}}
+</style>
+<section class="msm">
+  <div class="msm-wrap">
+    <span class="msm-eyebrow">The bottom line</span>
+    <h2 class="msm-h2">The Opportunity <em>in Perspective</em></h2>
+    <p class="msm-lede">The baked goods market is crowded. The decorative candle market is saturated. The Edible Gourmet Candle market is just being born. Would you rather sit back and watch the trend, or be the first one to profit from it?</p>
+
+    <div class="msm-map">
+      <div class="msm-cell">
+        <div class="msm-ic" aria-hidden="true">&#127874;</div>
+        <div class="msm-lbl">Baked goods market</div>
+        <div class="msm-title">Traditional Pastries</div>
+        <span class="msm-status">Saturated</span>
+      </div>
+      <div class="msm-cell hl">
+        <div class="msm-ic" aria-hidden="true">&#128640;</div>
+        <div class="msm-lbl">You are here</div>
+        <div class="msm-title">Edible Gourmet Candles</div>
+        <span class="msm-status open">Untapped Market</span>
+      </div>
+      <div class="msm-cell">
+        <div class="msm-ic" aria-hidden="true">&#128367;&#65039;</div>
+        <div class="msm-lbl">Decorative candle market</div>
+        <div class="msm-title">Wax Candles</div>
+        <span class="msm-status">Saturated</span>
+      </div>
+    </div>
+
+    <div class="msm-quote">"The one who gets there first sets the price."</div>
+    <a href="#pricing" class="msm-cta">Click Here for More Information <span class="arrow">&#8594;</span></a>
+  </div>
+</section>

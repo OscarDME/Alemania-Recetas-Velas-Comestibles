@@ -1,0 +1,101 @@
+<!-- ============ 04 — TREND TIMELINE (icon style, no images) ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .mpn *{margin:0;padding:0;box-sizing:border-box;}
+  .mpn{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-soft:#a3a57e;--olive-wash:#eceedd;--cream:#f7f3e6;--cream-lt:#fffdf6;
+    --terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;--ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream-lt);
+    padding:10px 22px 18px;position:relative;-webkit-font-smoothing:antialiased;}
+  .mpn-wrap{max-width:1080px;margin:0 auto;}
+
+  .mpn-head{text-align:center;max-width:680px;margin:0 auto 48px;}
+  .mpn-eyebrow{display:block;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:16px;}
+  .mpn-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,4.4vw,48px);line-height:1.12;color:var(--ink);letter-spacing:-0.012em;}
+  .mpn-h2 em{font-style:italic;color:var(--terra-deep);}
+  .mpn-sublabel{text-align:center;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin:-28px auto 34px;}
+
+  .mpn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1040px;margin:0 auto;}
+  .mpn-pain{text-align:center;padding:8px 4px;}
+  .mpn-icon{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;font-size:26px;line-height:1;
+    background:var(--olive-wash);border:1px solid var(--line);color:var(--olive-deep);margin-bottom:20px;transition:background .3s ease,color .3s ease,transform .3s ease;}
+  .mpn-pain:hover .mpn-icon{background:var(--olive-deep);transform:translateY(-3px);}
+  .mpn-year{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:var(--olive);margin-bottom:8px;}
+  .mpn-pain h3{font-family:'Fraunces',serif;font-size:19px;font-weight:500;color:var(--ink);line-height:1.25;margin-bottom:10px;}
+  .mpn-pain p{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0 auto 14px;max-width:28ch;}
+  .mpn-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:800;
+    padding:7px 14px;border-radius:50px;background:var(--olive-wash);border:1px solid var(--line);color:var(--ink-soft);}
+  .mpn-pain.on .mpn-icon{background:var(--terra);border-color:var(--terra);}
+  .mpn-pain.on .mpn-year{color:var(--terra-deep);}
+  .mpn-pain.on .mpn-badge{background:var(--terra);border-color:var(--terra);color:var(--cream-lt);}
+
+  .mpn-bridge{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:56px;}
+  .mpn-bridge p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(16px,2.4vw,20px);color:var(--olive-deep);text-align:center;max-width:54ch;}
+  .mpn-bridge .ln{flex:0 0 48px;height:1px;background:var(--olive-soft);}
+  .mpn-note{text-align:center;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--terra);margin-top:16px;}
+
+  @media(max-width:900px){.mpn-grid{grid-template-columns:repeat(2,1fr);gap:38px 26px;}}
+  @media(max-width:560px){
+    .mpn-grid{grid-template-columns:1fr;gap:24px;max-width:460px;}
+    .mpn-pain{text-align:left;display:grid;grid-template-columns:52px 1fr;column-gap:16px;row-gap:4px;align-items:start;padding:14px 0;}
+    .mpn-icon{grid-row:1/4;grid-column:1;margin:0;width:48px;height:48px;align-self:center;font-size:22px;}
+    .mpn-year{grid-column:2;grid-row:1;margin:0 0 2px;}
+    .mpn-pain h3{grid-column:2;grid-row:2;margin:0 0 6px;font-size:17px;}
+    .mpn-pain p{grid-column:2;grid-row:3;max-width:none;margin:0 0 10px;font-size:14px;}
+    .mpn-badge{grid-column:2;grid-row:4;justify-self:start;}
+    .mpn-bridge .ln{display:none;}
+  }
+</style>
+<section class="mpn">
+  <div class="mpn-wrap">
+
+    <div class="mpn-head">
+      <span class="mpn-eyebrow">The competitive edge</span>
+      <h2 class="mpn-h2">Create an income stream that functions as both <em>stunning decor and delicious food.</em></h2>
+    </div>
+    <div class="mpn-sublabel">The evolution of artisanal trends</div>
+
+    <div class="mpn-grid">
+
+      <div class="mpn-pain">
+        <div class="mpn-icon" aria-hidden="true">&#127852;</div>
+        <div class="mpn-year">2018 &#8212; 2020</div>
+        <h3>Gourmet Cake Pops</h3>
+        <p>Early adopters profited massively.</p>
+        <span class="mpn-badge">Saturated</span>
+      </div>
+
+      <div class="mpn-pain">
+        <div class="mpn-icon" aria-hidden="true">&#127874;</div>
+        <div class="mpn-year">2021 &#8212; 2023</div>
+        <h3>Hot Cocoa Bombs</h3>
+        <p>Early adopters profited massively.</p>
+        <span class="mpn-badge">Saturated</span>
+      </div>
+
+      <div class="mpn-pain">
+        <div class="mpn-icon" aria-hidden="true">&#127827;</div>
+        <div class="mpn-year">2025</div>
+        <h3>Candied Strawberries (Tanghulu)</h3>
+        <p>Early adopters profited massively.</p>
+        <span class="mpn-badge">Saturated</span>
+      </div>
+
+      <div class="mpn-pain on">
+        <div class="mpn-icon" aria-hidden="true">&#128367;&#65039;</div>
+        <div class="mpn-year">2026 &#8212; Right Now</div>
+        <h3>Edible Gourmet Candles</h3>
+        <p>The window is still wide open.</p>
+        <span class="mpn-badge">Untapped Market</span>
+      </div>
+
+    </div>
+
+    <div class="mpn-bridge">
+      <span class="ln"></span>
+      <p>"While others copy trends, <em>you launch them.</em>"</p>
+      <span class="ln"></span>
+    </div>
+    <div class="mpn-note">Nobody in your town is selling these yet</div>
+
+  </div>
+</section>

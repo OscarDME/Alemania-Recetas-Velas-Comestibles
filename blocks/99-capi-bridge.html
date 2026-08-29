@@ -1,0 +1,132 @@
+<!-- ============ 99 — CONVERSIONS API BRIDGE ============ -->
+{% raw %}
+<script>
+// Bridge between the browser Pixel and /api/track.
+//
+// No IP is sent from here: the browser does not know its own public IP. The
+// server reads it from the connection when the request arrives.
+(function(){
+  var ENDPOINT = '/api/track';
+  var market = window.__market || { currency: 'USD', value: 27 };
+
+  var readCookie = function(name){
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : undefined;
+  };
+
+  // Attribution values: the query string wins over what was stored on arrival.
+  var ATTR_KEYS = ['src','fbclid','gclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var readAttr = function(key){
+    var v = null;
+    try { v = new URLSearchParams(location.search).get(key); } catch(e){}
+    if (v) return v;
+    try { return localStorage.getItem('hotmart_' + key) || null; } catch(e){ return null; }
+  };
+  var readFbclid = function(){ return readAttr('fbclid') || undefined; };
+
+  // Carries the ad attribution across to OrioPay. Without this the checkout —
+  // and therefore the Purchase event OrioPay sends to Meta — has no idea which
+  // ad produced the visit.
+  var withAttribution = function(base){
+    try{
+      var u = new URL(base);
+      ATTR_KEYS.forEach(function(k){
+        var v = readAttr(k);
+        if (v) u.searchParams.set(k, v);   // set, not append: reapplying is idempotent
+      });
+      return u.toString();
+    }catch(e){ return base; }              // invalid base: never break the button
+  };
+
+  var newEventId = function(){
+    return (window.crypto && crypto.randomUUID && crypto.randomUUID()) ||
+      String(Date.now()) + Math.random().toString(16).slice(2);
+  };
+
+  var send = function(eventName, eventId, custom){
+    try{
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          event_name: eventName,
+          event_id: eventId,
+          event_source_url: location.href,
+          fbp: readCookie('_fbp'),
+          fbc: readCookie('_fbc'),
+          // Click id fallback. The _fbc cookie is written by fbevents.js, which
+          // is deferred here, so on a first visit from an ad it rarely exists
+          // yet. The raw fbclid goes instead and the server composes fbc.
+          fbclid: readFbclid(),
+          value: custom && custom.value,
+          currency: custom && custom.currency
+        }),
+        // keepalive: the request survives the navigation to the checkout.
+        keepalive: true
+      }).catch(function(){});
+    }catch(e){ /* tracking must never break the page */ }
+  };
+
+  // The server-side PageView does NOT wait for Meta's library: it uses the
+  // eventID generated synchronously in the <head>. So the event still reaches
+  // Meta when an ad blocker stops fbevents.js, which is a sizeable slice of
+  // traffic. Meta joins both by event_id.
+  var firePageView = function(){
+    if(!window.__pvEventId) return;
+    send('PageView', window.__pvEventId);
+  };
+  var schedule = function(){
+    if('requestIdleCallback' in window) requestIdleCallback(firePageView, { timeout: 3000 });
+    else setTimeout(firePageView, 1200);
+  };
+  if(document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
+
+  // Internal CTAs scroll without touching the URL. Beyond being the desired
+  // behaviour, it keeps the hash from changing at all, which is what used to make
+  // the Pixel emit a second PageView on every click.
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href').slice(1);
+      if(!id) return;
+      var target = document.getElementById(id);
+      if(!target) return;
+      e.preventDefault();
+      // Land on the checkout button rather than the top of the section: the offer
+      // starts with the eyebrow, the pill and the countdown, so scrolling to its
+      // start leaves the green CTA well below the fold. Centering the button puts
+      // the price and the button on screen together.
+      var focus = target.querySelector('[data-checkout]');
+      if (focus) focus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      else target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Checkout clicks: the same eventID travels down both channels so Meta counts
+  // one event, not two.
+  document.querySelectorAll('[data-checkout]').forEach(function(el){
+    // The original href is stored once: always rebuilding from that base keeps
+    // params from piling up and survives repeated clicks.
+    if (!el.dataset.checkoutBase) el.dataset.checkoutBase = el.getAttribute('href') || '';
+    var base = el.dataset.checkoutBase;
+    // Set on load too, so copying the link or opening it in a new tab carries it.
+    if (base) el.setAttribute('href', withAttribution(base));
+
+    el.addEventListener('click', function(){
+      // And again on click, in case the value arrived after first paint.
+      if (base) el.setAttribute('href', withAttribution(base));
+      var eventId = newEventId();
+      var custom = { value: market.value, currency: market.currency };
+      if(typeof fbq === 'function'){
+        fbq('track','InitiateCheckout', {
+          content_name: 'Edible Gourmet Candles',
+          currency: custom.currency,
+          value: custom.value
+        }, { eventID: eventId });
+      }
+      send('InitiateCheckout', eventId, custom);
+    });
+  });
+})();
+</script>
+{% endraw %}

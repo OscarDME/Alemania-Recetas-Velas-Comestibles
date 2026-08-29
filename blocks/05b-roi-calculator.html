@@ -1,0 +1,97 @@
+<!-- ============ 05b — RETURN CALCULATOR ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .mrc *{margin:0;padding:0;box-sizing:border-box;}
+  .mrc{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-wash:#eceedd;--cream:#f7f3e6;--cream-lt:#fffdf6;
+    --terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;--green:#5f7f4e;
+    --ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--olive-wash);
+    padding:4px 22px 20px;-webkit-font-smoothing:antialiased;}
+  .mrc-wrap{max-width:680px;margin:0 auto;}
+  .mrc-box{background:var(--cream-lt);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    box-shadow:0 22px 44px -26px rgba(92,94,58,0.4);}
+  .mrc-header{background:var(--olive-deep);color:var(--cream-lt);padding:14px 22px;text-align:center;
+    font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;}
+  .mrc-body{padding:26px 24px 24px;}
+  .mrc-row{display:grid;grid-template-columns:1fr 1.4fr auto;align-items:center;gap:14px;margin-bottom:18px;}
+  .mrc-label{font-size:13px;font-weight:600;color:var(--ink-soft);}
+  .mrc-val{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--terra-deep);min-width:62px;text-align:right;}
+  .mrc-slider{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:50px;background:var(--line);outline:none;}
+  .mrc-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;
+    background:var(--terra);border:3px solid var(--cream-lt);box-shadow:0 3px 10px -2px rgba(168,114,74,0.7);cursor:pointer;}
+  .mrc-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--terra);
+    border:3px solid var(--cream-lt);box-shadow:0 3px 10px -2px rgba(168,114,74,0.7);cursor:pointer;}
+  .mrc-divider{border:none;border-top:1px solid var(--line);margin:22px 0;}
+  .mrc-results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .mrc-card{background:var(--olive-wash);border:1px solid var(--line);border-radius:14px;padding:16px 10px;text-align:center;}
+  .mrc-card .v{font-family:'Fraunces',serif;font-size:clamp(18px,4vw,25px);font-weight:600;color:var(--ink);line-height:1.1;white-space:nowrap;}
+  .mrc-card .l{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin-top:7px;}
+  .mrc-card.hl{background:rgba(95,127,78,0.12);border-color:rgba(95,127,78,0.4);}
+  .mrc-card.hl .v{color:var(--green);}
+  .mrc-note{font-size:11.5px;color:var(--ink-soft);margin-top:16px;line-height:1.5;text-align:center;}
+  .mrc-cta-box{display:flex;justify-content:center;margin-top:32px;}
+  .mrc-cta{display:inline-flex!important;visibility:visible!important;opacity:1!important;align-items:center;justify-content:center;gap:10px;
+    text-decoration:none!important;background:var(--terra)!important;color:var(--cream-lt)!important;
+    padding:18px 38px;border-radius:50px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;
+    box-shadow:0 16px 36px -12px rgba(168,114,74,0.6);border:none;cursor:pointer;transition:transform .3s ease,background .3s ease;}
+  .mrc-cta:hover{transform:translateY(-2px);background:var(--terra-deep)!important;color:var(--cream-lt)!important;}
+  .mrc-cta .arrow{transition:transform .3s ease;}
+  .mrc-cta:hover .arrow{transform:translateX(4px);}
+  @media(max-width:520px){
+    .mrc-row{grid-template-columns:1fr auto;grid-template-areas:"lab val" "sld sld";row-gap:10px;}
+    .mrc-label{grid-area:lab;} .mrc-val{grid-area:val;} .mrc-slider{grid-area:sld;}
+  }
+</style>
+<section class="mrc">
+  <div class="mrc-wrap">
+    <div class="mrc-box">
+      <div class="mrc-header">Calculate your estimated return</div>
+      <div class="mrc-body">
+        <div class="mrc-row">
+          <span class="mrc-label">Candles per week</span>
+          <input type="range" class="mrc-slider" id="velasSlider" min="2" max="30" value="8" aria-label="Candles per week">
+          <span class="mrc-val" id="velasVal">8</span>
+        </div>
+        <div class="mrc-row">
+          <span class="mrc-label">Average ticket per candle</span>
+          <input type="range" class="mrc-slider" id="ticketSlider" min="15" max="45" step="1" value="27" aria-label="Average ticket per candle">
+          <span class="mrc-val" id="ticketVal">$27</span>
+        </div>
+        <hr class="mrc-divider">
+        <div class="mrc-results">
+          <div class="mrc-card"><div class="v" id="resSemana">$216</div><div class="l">Per week</div></div>
+          <div class="mrc-card"><div class="v" id="resMes">$864</div><div class="l">Per month</div></div>
+          <div class="mrc-card hl"><div class="v">1st sale</div><div class="l">Recovers the kit</div></div>
+        </div>
+        <div class="mrc-note">* Estimates based on gross revenue, with an average production cost of about $3.50 per candle. Actual results may vary.</div>
+      </div>
+    </div>
+    <div class="mrc-cta-box">
+      <a href="#pricing" class="mrc-cta">Click Here for More Information <span class="arrow">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+{% raw %}
+<script>
+(function(){
+  var s = document.currentScript.previousElementSibling;
+  if(!s) return;
+  var qty = s.querySelector('#velasSlider');
+  var ticket = s.querySelector('#ticketSlider');
+  if(!qty || !ticket) return;
+  function calcROI(){
+    var q = parseInt(qty.value, 10);
+    var t = parseInt(ticket.value, 10);
+    var week = q * t;
+    var month = week * 4;
+    s.querySelector('#velasVal').textContent = q;
+    s.querySelector('#ticketVal').textContent = '$' + t;
+    s.querySelector('#resSemana').textContent = '$' + week.toLocaleString('en-US');
+    s.querySelector('#resMes').textContent = '$' + month.toLocaleString('en-US');
+  }
+  qty.addEventListener('input', calcROI);
+  ticket.addEventListener('input', calcROI);
+  calcROI();
+})();
+</script>
+{% endraw %}

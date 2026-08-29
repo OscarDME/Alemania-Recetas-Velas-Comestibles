@@ -1,0 +1,78 @@
+<!-- ============ 05 — 5 REASONS (card style, no images) ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .msl *{margin:0;padding:0;box-sizing:border-box;}
+  .msl{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-soft:#a3a57e;--olive-wash:#eceedd;--cream:#f7f3e6;--cream-lt:#fffdf6;
+    --terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;--ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--olive-wash);
+    padding:10px 22px 18px;-webkit-font-smoothing:antialiased;}
+  .msl-wrap{max-width:1020px;margin:0 auto;}
+
+  .msl-head{text-align:center;max-width:720px;margin:0 auto 48px;}
+  .msl-eyebrow{display:inline-block;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra);font-weight:700;margin-bottom:18px;}
+  .msl-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,4.4vw,48px);line-height:1.12;color:var(--ink);margin-bottom:18px;letter-spacing:-0.012em;}
+  .msl-h2 em{font-style:italic;color:var(--terra-deep);}
+  .msl-lede{font-size:16px;line-height:1.75;color:var(--ink-soft);max-width:58ch;margin:0 auto;}
+
+  .msl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:980px;margin:0 auto;}
+  .msl-card{background:var(--cream-lt);border:1px solid var(--line);border-radius:18px;padding:36px 32px;position:relative;
+    transition:transform .5s ease,box-shadow .5s ease;}
+  .msl-card:hover{transform:translateY(-4px);box-shadow:0 22px 44px -22px rgba(92,94,58,0.4);}
+  .msl-card:last-child{grid-column:1/-1;}
+  .msl-num{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:44px;line-height:1;color:var(--terra);margin-bottom:18px;}
+  .msl-ic{font-size:26px;line-height:1;margin-bottom:12px;}
+  .msl-card h3{font-family:'Fraunces',serif;font-size:21px;font-weight:500;color:var(--ink);line-height:1.25;margin-bottom:12px;}
+  .msl-card p{font-size:14px;color:var(--ink-soft);line-height:1.65;margin:0;max-width:46ch;}
+
+  @media(max-width:820px){.msl-grid{grid-template-columns:1fr;}.msl-card:last-child{grid-column:auto;}}
+  @media(max-width:560px){.msl-card{padding:18px 24px;}}
+</style>
+<section class="msl">
+  <div class="msl-wrap">
+
+    <div class="msl-head">
+      <span class="msl-eyebrow">Why you need to get in now</span>
+      <h2 class="msl-h2">5 reasons the market <em>hasn't caught on yet.</em></h2>
+      <p class="msl-lede">Edible Candles combine what no other handcrafted product has delivered before: high margins, simple logistics, and marketing that practically runs itself.</p>
+    </div>
+
+    <div class="msl-grid">
+
+      <article class="msl-card">
+        <div class="msl-num">01</div>
+        <div class="msl-ic" aria-hidden="true">&#128176;</div>
+        <h3>Up to 700% Profit Margins</h3>
+        <p>Production costs sit around $3&#8211;$4. You can easily sell them for $25&#8211;$35 per unit.</p>
+      </article>
+
+      <article class="msl-card">
+        <div class="msl-num">02</div>
+        <div class="msl-ic" aria-hidden="true">&#127942;</div>
+        <h3>Zero Competition</h3>
+        <p>Open UberEats or DoorDash in your city right now. How many people are selling Edible Candles? Exactly.</p>
+      </article>
+
+      <article class="msl-card">
+        <div class="msl-num">03</div>
+        <div class="msl-ic" aria-hidden="true">&#128241;</div>
+        <h3>Built-in Virality</h3>
+        <p>Every customer who buys one will film it, post it, and tag your profile. Your content reaches new buyers without you spending a dime on ads.</p>
+      </article>
+
+      <article class="msl-card">
+        <div class="msl-num">04</div>
+        <div class="msl-ic" aria-hidden="true">&#128230;</div>
+        <h3>Simple Logistics</h3>
+        <p>They are solid and incredibly easy to transport. No more dealing with the anxiety of a frosted cake collapsing during delivery.</p>
+      </article>
+
+      <article class="msl-card">
+        <div class="msl-num">05</div>
+        <div class="msl-ic" aria-hidden="true">&#9889;</div>
+        <h3>1 Sale = Your Investment Back</h3>
+        <p>With a single $27 sale, you immediately make back your entire investment in the complete kit.</p>
+      </article>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,136 @@
+<!-- ============ 08 — CAROUSEL: What is inside the kit ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .mcr *{margin:0;padding:0;box-sizing:border-box;}
+  .mcr{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-wash:#eceedd;--cream:#f7f3e6;--cream-lt:#fffdf6;
+    --terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;--green:#5f7f4e;--ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream-lt);
+    padding:66px 0 66px;overflow:hidden;-webkit-font-smoothing:antialiased;}
+  .mcr-head{text-align:center;max-width:720px;margin:0 auto 30px;padding:0 22px;}
+  .mcr-eyebrow{display:inline-block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:14px;}
+  .mcr-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(28px,4.4vw,44px);line-height:1.14;color:var(--ink);margin-bottom:14px;}
+  .mcr-h2 em{font-style:italic;color:var(--terra-deep);}
+  .mcr-lede{font-size:15.5px;color:var(--ink-soft);line-height:1.7;}
+
+  .mcr-filter{display:flex;justify-content:center;gap:8px;margin-bottom:34px;flex-wrap:wrap;padding:0 22px;}
+  .mcr-fbtn{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line);color:var(--ink-soft);
+    padding:13px 22px;border-radius:50px;cursor:pointer;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;
+    transition:background .3s ease,color .3s ease,border-color .3s ease;}
+  .mcr-fbtn:hover{color:var(--olive-deep);border-color:var(--olive);}
+  .mcr-fbtn.on{background:var(--olive-deep);color:var(--cream-lt);border-color:var(--olive-deep);}
+  .mcr-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:50px;
+    background:var(--olive-wash);color:var(--olive-deep);font-size:11px;font-weight:800;}
+  .mcr-fbtn.on .mcr-count{background:rgba(255,255,255,0.22);color:var(--cream-lt);}
+
+  .mcr-track{display:flex;gap:22px;overflow-x:auto;scroll-behavior:smooth;padding:10px 22px 30px;scroll-snap-type:x mandatory;scrollbar-width:none;}
+  .mcr-track::-webkit-scrollbar{display:none;}
+  .mcr-track.fit{justify-content:center;}
+  .mcr-controls[hidden]{display:none;}
+  .mcr-card{flex:0 0 280px;background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column;transition:transform .4s ease,box-shadow .4s ease;}
+  .mcr-card:hover{transform:translateY(-6px);box-shadow:0 26px 52px -26px rgba(92,94,58,0.45);}
+  .mcr-card[hidden]{display:none;}
+  .mcr-img{width:100%;aspect-ratio:1/1;background:var(--olive-wash);position:relative;border-bottom:1px solid var(--line);}
+  .mcr-img img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;}
+  .mcr-margin{position:absolute;top:12px;right:12px;z-index:2;background:rgba(95,127,78,0.94);color:var(--cream-lt);
+    padding:6px 12px;border-radius:50px;font-size:10.5px;letter-spacing:0.04em;font-weight:800;white-space:nowrap;}
+  .mcr-tag{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:2;background:var(--olive-deep);color:var(--cream-lt);
+    padding:7px 14px;border-radius:50px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;white-space:nowrap;}
+  .mcr-tag.alt{background:var(--terra);}
+  .mcr-body{padding:20px 20px 22px;flex-grow:1;display:flex;flex-direction:column;}
+  .mcr-body h3{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--ink);line-height:1.25;margin-bottom:8px;}
+  .mcr-body p{font-size:13px;color:var(--ink-soft);line-height:1.55;}
+  .mcr-detail{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-soft);line-height:1.55;}
+  .mcr-controls{display:flex;justify-content:center;gap:14px;margin-bottom:22px;}
+  .mcr-arrow{width:48px;height:48px;border-radius:50%;background:var(--white);border:1px solid var(--line);color:var(--olive-deep);
+    font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;user-select:none;}
+  .mcr-arrow:hover{background:var(--olive-deep);color:var(--cream-lt);border-color:var(--olive-deep);transform:translateY(-2px);}
+  .mcr-foot{text-align:center;padding:0 22px;font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--olive-deep);max-width:60ch;margin:0 auto;line-height:1.6;}
+</style>
+<section class="mcr">
+  <div class="mcr-head">
+    <span class="mcr-eyebrow">What is inside the kit</span>
+    <h2 class="mcr-h2">Your Complete <em>Business Plan</em></h2>
+    <p class="mcr-lede">Get a comprehensive system to build, price, and sell the most viral handcrafted product on the market.</p>
+  </div>
+
+  <div class="mcr-filter">
+    <button type="button" class="mcr-fbtn on" data-occ="gifts">&#127873; Great for Gifts <span class="mcr-count">3</span></button>
+    <button type="button" class="mcr-fbtn" data-occ="events">&#129346; Perfect for Events <span class="mcr-count">3</span></button>
+  </div>
+
+  <div class="mcr-track" id="mcrTrack">
+    <article class="mcr-card" data-occ="gifts">
+      <div class="mcr-img"><img src="/images/photos/chili-oil.webp" alt="Chili Infused Olive Oil" loading="lazy"><span class="mcr-margin">+580% Margin</span><span class="mcr-tag">Best-seller</span></div>
+      <div class="mcr-body"><h3>Chili Infused Olive Oil</h3><p>A sweet-and-savory contrast that sells itself. A massive favorite for gift sets.</p><div class="mcr-detail">Spectacular on camera and easy to produce in batches.</div></div>
+    </article>
+    <article class="mcr-card" data-occ="gifts">
+      <div class="mcr-img"><img src="/images/photos/black-truffle.webp" alt="Melted Black Truffle" loading="lazy"><span class="mcr-margin">+620% Margin</span><span class="mcr-tag">Most photographed</span></div>
+      <div class="mcr-body"><h3>Melted Black Truffle</h3><p>The melting texture generates videos that go viral effortlessly.</p><div class="mcr-detail">The chocolate fusion creates a unique visual effect customers love to share.</div></div>
+    </article>
+    <article class="mcr-card" data-occ="gifts">
+      <div class="mcr-img"><img src="/images/photos/maple-pecan.webp" alt="Maple Pecan Butter" loading="lazy"><span class="mcr-margin">+700% Margin</span><span class="mcr-tag">Premium edge</span></div>
+      <div class="mcr-body"><h3>Maple Pecan Butter</h3><p>High perceived value at an incredibly low cost per unit.</p><div class="mcr-detail">Toasted pecans and a maple finish read as fall and holiday gifting, which justifies a premium price tag.</div></div>
+    </article>
+    <article class="mcr-card" data-occ="events" hidden>
+      <div class="mcr-img"><img src="/images/photos/smoked-cheddar.webp" alt="Smoked Cheddar &amp; Chive" loading="lazy"><span class="mcr-margin">+550% Margin</span><span class="mcr-tag alt">Corporate events</span></div>
+      <div class="mcr-body"><h3>Smoked Cheddar &amp; Chive</h3><p>Fast to produce with a high yield per batch.</p><div class="mcr-detail">A guaranteed hit at company events. Scales beautifully for large orders without adding complexity.</div></div>
+    </article>
+    <article class="mcr-card" data-occ="events" hidden>
+      <div class="mcr-img"><img src="/images/photos/sundried-tomato.webp" alt="Sun-Dried Tomato Olive Oil" loading="lazy"><span class="mcr-margin">+600% Margin</span><span class="mcr-tag alt">Bakery partnerships</span></div>
+      <div class="mcr-body"><h3>Sun-Dried Tomato Olive Oil</h3><p>Ideal for recurring orders with coffee shops and specialty grocers.</p><div class="mcr-detail">Margins grow with volume. A sophisticated flavor profile that attracts higher-ticket customers and weekly repeat orders.</div></div>
+    </article>
+    <article class="mcr-card" data-occ="events" hidden>
+      <div class="mcr-img"><img src="/images/blue-cheese.webp" alt="Spiced Blue Cheese" width="560" height="560" loading="lazy"><span class="mcr-margin">+680% Margin</span><span class="mcr-tag alt">Anchor product</span></div>
+      <div class="mcr-body"><h3>Spiced Blue Cheese</h3><p>Anchors the ticket price in premium gift baskets.</p><div class="mcr-detail">The centerpiece of any cheese board. It raises the perceived value of the whole basket and justifies above-average pricing.</div></div>
+    </article>
+  </div>
+
+  <div class="mcr-controls" id="mcrControls">
+    <div class="mcr-arrow mcr-prev" role="button" tabindex="0" aria-label="Previous">&#8592;</div>
+    <div class="mcr-arrow mcr-next" role="button" tabindex="0" aria-label="Next">&#8594;</div>
+  </div>
+
+  <p class="mcr-foot">Every recipe includes ingredients, estimated costs, and recommended sales channels &#8212; so you can pick your favorite and start today.</p>
+</section>
+{% raw %}
+<script>
+(function(){
+  var s = document.currentScript.previousElementSibling;
+  if(!s) return;
+  var track = s.querySelector('#mcrTrack');
+  var prev = s.querySelector('.mcr-prev');
+  var next = s.querySelector('.mcr-next');
+  var fbtns = s.querySelectorAll('.mcr-fbtn');
+  var cards = s.querySelectorAll('.mcr-card');
+  var controls = s.querySelector('#mcrControls');
+  if(!track) return;
+  function step(){
+    var c = track.querySelector('.mcr-card:not([hidden])');
+    if(!c) return 300;
+    var g = parseFloat(getComputedStyle(track).gap) || 22;
+    return c.offsetWidth + g;
+  }
+  // Arrows only make sense when the track actually overflows (mobile / narrow screens).
+  function syncOverflow(){
+    track.classList.remove('fit');
+    var overflows = track.scrollWidth > track.clientWidth + 4;
+    track.classList.toggle('fit', !overflows);
+    if(controls) controls.hidden = !overflows;
+  }
+  next.addEventListener('click', function(){ track.scrollBy({ left: step(), behavior: 'smooth' }); });
+  prev.addEventListener('click', function(){ track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  fbtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var occ = btn.getAttribute('data-occ');
+      fbtns.forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on');
+      cards.forEach(function(c){ c.hidden = (c.getAttribute('data-occ') !== occ); });
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+      syncOverflow();
+    });
+  });
+  syncOverflow();
+  window.addEventListener('resize', syncOverflow);
+})();
+</script>
+{% endraw %}

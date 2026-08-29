@@ -1,0 +1,143 @@
+<!-- ============ 06 — "CAN I ACTUALLY DO THIS?" (tabs) ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .mtm *{margin:0;padding:0;box-sizing:border-box;}
+  .mtm{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-wash:#eceedd;--cream:#f7f3e6;--cream-lt:#fffdf6;
+    --terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;--green:#5f7f4e;--ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream-lt);
+    padding:16px 22px 14px;-webkit-font-smoothing:antialiased;}
+  .mtm-wrap{max-width:1040px;margin:0 auto;}
+  .mtm-head{text-align:center;max-width:640px;margin:0 auto 40px;}
+  .mtm-eyebrow{display:inline-block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:14px;}
+  .mtm-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(28px,4.4vw,44px);line-height:1.14;color:var(--ink);margin-bottom:14px;}
+  .mtm-h2 em{font-style:italic;color:var(--terra-deep);}
+  .mtm-lede{font-size:15.5px;color:var(--ink-soft);line-height:1.7;}
+  .mtm-lede b{color:var(--ink);font-weight:600;}
+
+  .mtm-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px;flex-wrap:wrap;}
+  .mtm-tab{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line);color:var(--ink-soft);
+    padding:13px 22px;border-radius:50px;cursor:pointer;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;
+    transition:background .3s ease,color .3s ease,border-color .3s ease;}
+  .mtm-tab:hover{color:var(--olive-deep);border-color:var(--olive);}
+  .mtm-tab.on{background:var(--olive-deep);color:var(--cream-lt);border-color:var(--olive-deep);}
+
+  .mtm-panel{display:none;}
+  .mtm-panel.on{display:block;animation:mtmFade .5s ease;}
+  @keyframes mtmFade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .mtm-content{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .mtm-txt h3{font-family:'Fraunces',serif;font-size:clamp(21px,3.2vw,30px);font-weight:500;line-height:1.25;margin-bottom:16px;color:var(--ink);}
+  .mtm-txt > p{font-size:15.5px;color:var(--ink-soft);line-height:1.7;margin-bottom:22px;}
+  .mtm-proof{position:relative;padding:18px 20px 18px 26px;background:var(--olive-wash);border:1px solid var(--line);border-radius:14px;
+    font-family:'Fraunces',serif;font-style:italic;font-size:14.5px;line-height:1.6;color:var(--ink);}
+  .mtm-proof::before{content:'';position:absolute;left:10px;top:20px;bottom:20px;width:2px;background:var(--terra);border-radius:2px;}
+  .mtm-proof cite{display:block;margin-top:10px;font-family:'Inter',sans-serif;font-style:normal;font-size:11.5px;
+    letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:var(--olive-deep);}
+
+  .mtm-slot{aspect-ratio:4/5;background:var(--olive-wash);border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative;max-width:400px;margin:0 auto;}
+  .mtm-slot img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;}
+
+  .mtm-result{display:flex;align-items:center;gap:18px;max-width:720px;margin:46px auto 0;padding:20px 24px;
+    background:rgba(95,127,78,0.1);border:1px solid rgba(95,127,78,0.4);border-radius:18px;}
+  .mtm-result-ic{width:52px;height:52px;border-radius:50%;background:var(--white);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+  .mtm-result-lbl{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:800;color:var(--green);margin-bottom:6px;}
+  .mtm-result p{font-size:14.5px;color:var(--ink);line-height:1.55;font-weight:500;margin:0;}
+  .mtm-cta-box{display:flex;justify-content:center;margin-top:32px;}
+  .mtm-cta{display:inline-flex!important;visibility:visible!important;opacity:1!important;align-items:center;justify-content:center;gap:10px;
+    text-decoration:none!important;background:var(--terra)!important;color:var(--cream-lt)!important;
+    padding:18px 38px;border-radius:50px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;
+    box-shadow:0 16px 36px -12px rgba(168,114,74,0.6);border:none;cursor:pointer;transition:transform .3s ease,background .3s ease;}
+  .mtm-cta:hover{transform:translateY(-2px);background:var(--terra-deep)!important;color:var(--cream-lt)!important;}
+  .mtm-cta .arrow{transition:transform .3s ease;}
+  .mtm-cta:hover .arrow{transform:translateX(4px);}
+
+  @media(max-width:860px){.mtm-content{grid-template-columns:1fr;gap:30px;}.mtm-slot{aspect-ratio:1/1;max-width:320px;}}
+  @media(max-width:560px){.mtm-result{flex-direction:column;text-align:center;gap:12px;}}
+</style>
+
+<section class="mtm">
+  <div class="mtm-wrap">
+    <div class="mtm-head">
+      <span class="mtm-eyebrow">The most common concern</span>
+      <h2 class="mtm-h2">"Can I actually <em>do this?</em>"</h2>
+      <p class="mtm-lede">These recipes were tested by people who had <b>never cooked anything gourmet in their lives.</b> Here is what they have to say:</p>
+    </div>
+
+    <div class="mtm-tabs">
+      <button type="button" class="mtm-tab on" data-t="o1">&#128105;&#8205;&#127859; Never cooked gourmet</button>
+      <button type="button" class="mtm-tab" data-t="o2">&#128184; Do I need inventory?</button>
+      <button type="button" class="mtm-tab" data-t="o3">&#127978; Do I need a storefront?</button>
+    </div>
+
+    <div class="mtm-panel on" id="o1">
+      <div class="mtm-content">
+        <div class="mtm-txt">
+          <h3>"But I've never cooked anything gourmet in my life..."</h3>
+          <p>These recipes do not require professional chef techniques. If you can use a saucepan and a mold, you can make an Edible Candle. The entire process takes less than 20 minutes and uses everyday ingredients from your local grocery store.</p>
+          <div class="mtm-proof">"I made my first candle the exact same afternoon I got the materials. I knew nothing about cooking, and it turned out beautifully. People instantly started asking where I bought it."<cite>Rachel A. &#8212; Stay-at-home mom</cite></div>
+        </div>
+        <div class="mtm-slot">
+          <img src="/images/photos/candle-home.webp" alt="Edible Candle made at home" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="mtm-panel" id="o2">
+      <div class="mtm-content">
+        <div class="mtm-txt">
+          <h3>"Do I need to have stock ready before I sell?"</h3>
+          <p>No. The business model is 100% made-to-order &#8212; you only produce after the order is paid. That means zero inventory investment and zero risk of unsold product sitting around.</p>
+          <div class="mtm-proof">"I posted a photo in my gym's group chat on Thursday and by Saturday I already had five confirmed, paid orders. I didn't have to make anything in advance."<cite>Dana B. &#8212; Personal trainer</cite></div>
+        </div>
+        <div class="mtm-slot">
+          <img src="/images/photos/candle-order.webp" alt="Edible Candle made to order" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="mtm-panel" id="o3">
+      <div class="mtm-content">
+        <div class="mtm-txt">
+          <h3>"Do I need a physical store or display case to sell?"</h3>
+          <p>WhatsApp, Instagram and DoorDash are your storefront &#8212; no fixed costs, no rent. Most students sell entirely from home, with orders coming straight to their phone.</p>
+          <div class="mtm-proof">"I never had a store, never needed one. I sell through WhatsApp and I've already had a week where I couldn't keep up. The waitlist caught me off guard."<cite>Allie P. &#8212; Works from home</cite></div>
+        </div>
+        <div class="mtm-slot">
+          <img src="/images/photos/candle-whatsapp.webp" alt="Edible Candle sold through WhatsApp" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="mtm-result">
+      <span class="mtm-result-ic" aria-hidden="true">&#128367;&#65039;</span>
+      <div>
+        <div class="mtm-result-lbl">&#10003; What you actually need</div>
+        <p>15 mins + items you already have in your kitchen + the complete business plan you are getting today.</p>
+      </div>
+    </div>
+
+    <div class="mtm-cta-box">
+      <a href="#pricing" class="mtm-cta">Click Here for More Information <span class="arrow">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+{% raw %}
+<script>
+(function(){
+  var s = document.currentScript.previousElementSibling;
+  if(!s) return;
+  var tabs = s.querySelectorAll('.mtm-tab');
+  var panels = s.querySelectorAll('.mtm-panel');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.classList.remove('on'); });
+      panels.forEach(function(p){ p.classList.remove('on'); });
+      tab.classList.add('on');
+      var target = s.querySelector('#' + tab.getAttribute('data-t'));
+      if(target) target.classList.add('on');
+    });
+  });
+})();
+</script>
+{% endraw %}

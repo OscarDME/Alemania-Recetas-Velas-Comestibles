@@ -1,0 +1,54 @@
+<!-- ============ 13 — FAQ (accordion, no JavaScript) ============ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  .mfq *{margin:0;padding:0;box-sizing:border-box;}
+  .mfq{--olive:#7d7f52;--olive-deep:#5c5e3a;--olive-wash:#eceedd;--cream:#f7f3e6;--cream-lt:#fffdf6;
+    --terra:#a8724a;--terra-deep:#8c5c38;--gold:#d4a24c;--ink:#2e2f24;--ink-soft:#6b6c5b;--line:#e3dfcd;--white:#fff;
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream-lt);
+    padding:40px 22px 34px;-webkit-font-smoothing:antialiased;}
+  .mfq-wrap{max-width:780px;margin:0 auto;}
+  .mfq-head{text-align:center;margin-bottom:42px;}
+  .mfq-eyebrow{display:inline-block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:14px;}
+  .mfq-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(28px,4.4vw,44px);line-height:1.14;color:var(--ink);}
+  .mfq-h2 em{font-style:italic;color:var(--terra-deep);}
+  .mfq-item{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color .3s ease,box-shadow .3s ease;}
+  .mfq-item[open]{border-color:var(--olive);box-shadow:0 16px 36px -22px rgba(92,94,58,0.45);}
+  .mfq-item summary{list-style:none;padding:20px 24px;cursor:pointer;font-family:'Fraunces',serif;font-size:clamp(16px,2.2vw,19px);font-weight:600;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:18px;}
+  .mfq-item summary::-webkit-details-marker{display:none;}
+  .mfq-plus{width:30px;height:30px;border-radius:50%;border:1px solid var(--olive);color:var(--olive-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .4s ease,background .3s,color .3s;font-size:17px;font-weight:600;}
+  .mfq-item[open] .mfq-plus{transform:rotate(45deg);background:var(--olive-deep);color:var(--cream-lt);border-color:var(--olive-deep);}
+  .mfq-a{padding:0 24px 22px;color:var(--ink-soft);line-height:1.7;font-size:14.5px;}
+</style>
+<section class="mfq">
+  <div class="mfq-wrap">
+    <div class="mfq-head">
+      <span class="mfq-eyebrow">Frequently asked questions</span>
+      <h2 class="mfq-h2">Frequently <em>Asked Questions</em></h2>
+    </div>
+
+    <details class="mfq-item">
+      <summary>Are a lot of people already selling these? <span class="mfq-plus">+</span></summary>
+      <div class="mfq-a">That's exactly the best part. Open DoorDash or Instagram in your city right now and search "edible candle." What comes up? Probably nothing. The Edible Gourmet Candle market is exactly where hot cocoa bombs were in 2021 &#8212; right before they exploded. Whoever gets in now claims the space before the competition shows up.</div>
+    </details>
+
+    <details class="mfq-item">
+      <summary>What is the actual profit per unit sold? <span class="mfq-plus">+</span></summary>
+      <div class="mfq-a">Average production cost (ingredients + packaging) runs $3 to $4 per candle, depending on the recipe. Students sell them for $25 to $35 for direct sales, and $40 to $70 for events and premium gift baskets. Real margins land between 300% and 700%. The Margin &amp; Profit Calculator included in the kit breaks it all down recipe by recipe.</div>
+    </details>
+
+    <details class="mfq-item">
+      <summary>Is it safe for the customer to eat? <span class="mfq-plus">+</span></summary>
+      <div class="mfq-a">Yes, 100%. Every recipe uses food-grade ingredients only &#8212; butters, chocolates, olive oils and premium fats. The edible wick is engineered for a clean burn that releases no toxic substances. That technical edge is exactly what almost nobody has mastered &#8212; and what justifies the premium price.</div>
+    </details>
+
+    <details class="mfq-item">
+      <summary>Can I deliver them without the product getting ruined? <span class="mfq-plus">+</span></summary>
+      <div class="mfq-a">This is one of the biggest advantages Edible Candles have over cakes and frosted desserts. Because they are solid at room temperature, the candles are structurally stable and easy to transport. The recipes were specifically tested to hold up in delivery.</div>
+    </details>
+
+    <details class="mfq-item">
+      <summary>How do I get access after purchasing? <span class="mfq-plus">+</span></summary>
+      <div class="mfq-a">Immediately after your payment is confirmed, you will get an email with your full access link. All the content is available 24/7, from any device. Access is lifetime &#8212; no monthly fees, no renewals.</div>
+    </details>
+  </div>
+</section>
