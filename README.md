@@ -13,7 +13,7 @@ ambos proyectos: la jerarquía de rutas es la misma (`de/` aquí, `us/` allí).
 
 | Mercado | Ruta | Divisa | Checkout |
 |---|---|---|---|
-| **DE** | `/de` | EUR, `27 €` | *(pendiente)* |
+| **DE** | `/de` | EUR, `27 €` | `oriopay.app/p/rezeptefuressbarekerzen` |
 
 El visitante siempre ve la URL `/` — el edge hace **rewrite**, no redirect.
 
