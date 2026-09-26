@@ -36,7 +36,7 @@
 </script>
 
 <!-- Market served by this page. Read by the checkout handler and the CAPI client. -->
-<script>window.__market = { id: 'de', currency: 'EUR', value: 27 };</script>
+<script>window.__market = { id: 'de', currency: 'EUR', value: 17 };</script>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -233,7 +233,7 @@ src="https://www.facebook.com/tr?id=1089931066809976&ev=PageView&noscript=1"></n
     <div class="mah-facts">
       <span class="mah-fact"><b>700 %</b> Gewinnmarge</span>
       <span class="mah-fact"><b>200</b> Rezepte</span>
-      <span class="mah-fact"><b>27 €</b> Erster Verkauf</span>
+      <span class="mah-fact"><b>17 €</b> Dein Einstieg</span>
     </div>
   </div>
 </header>
@@ -421,7 +421,7 @@ src="https://www.facebook.com/tr?id=1089931066809976&ev=PageView&noscript=1"></n
         <div class="msl-num">05</div>
         <div class="msl-ic" aria-hidden="true">&#9889;</div>
         <h3>1 Verkauf = dein Einsatz ist zurück</h3>
-        <p>Mit einem einzigen Verkauf für 27 € hast du deine komplette Investition in dieses Kit sofort wieder drin.</p>
+        <p>Dein Kit kostet 17 €. Eine einzige verkaufte Kerze bringt 25 € bis 35 € &#8212; deine Investition ist schon mit dem ersten Verkauf zurück, und zwar mit Gewinn obendrauf.</p>
       </article>
 
     </div>
@@ -484,7 +484,7 @@ src="https://www.facebook.com/tr?id=1089931066809976&ev=PageView&noscript=1"></n
         <div class="mrc-row">
           <span class="mrc-label">Durchschnittlicher Bestellwert</span>
           <input type="range" class="mrc-slider" id="ticketSlider" min="15" max="45" step="1" value="27" aria-label="Durchschnittlicher Bestellwert pro Kerze">
-          <span class="mrc-val" id="ticketVal">$27</span>
+          <span class="mrc-val" id="ticketVal">27 €</span>
         </div>
         <hr class="mrc-divider">
         <div class="mrc-results">
@@ -1123,7 +1123,7 @@ src="https://www.facebook.com/tr?id=1089931066809976&ev=PageView&noscript=1"></n
 
     <div class="mof-total-lbl">Gesamtinvestition</div>
     <div class="mof-price-old">Normalpreis <s>97 €</s></div>
-    <div class="mof-now">27<span class="cur">&#8239;&euro;</span></div>
+    <div class="mof-now">17<span class="cur">&#8239;&euro;</span></div>
     <div class="mof-installment">Ein einziger Verkauf bezahlt alles</div>
 
     <div class="mof-bonus">
@@ -1252,7 +1252,7 @@ src="https://www.facebook.com/tr?id=1089931066809976&ev=PageView&noscript=1"></n
         <div class="mcm-av"><img src="/images/avatars/de-2.webp" alt="" width="128" height="128" loading="lazy"></div>
         <div class="mcm-body">
           <div class="mcm-name">Sarah Jäger</div>
-          <p class="mcm-text">Ich habe in meinem Leben noch nie etwas verkauft. Habe an einem Dienstag zwei Fotos in meiner lokalen Facebook-Gruppe gepostet und hatte am Freitag elf Bestellungen. Ich übertreibe nicht. Allein die Preistabelle war die 27 Euro wert.</p>
+          <p class="mcm-text">Ich habe in meinem Leben noch nie etwas verkauft. Habe an einem Dienstag zwei Fotos in meiner lokalen Facebook-Gruppe gepostet und hatte am Freitag elf Bestellungen. Ich übertreibe nicht. Allein die Preistabelle war die 17 Euro wert.</p>
           <div class="mcm-meta"><span>Antworten</span><span class="sep">&#183;</span><span>Gefällt mir</span><span class="sep">&#183;</span>5 Min.</div>
         </div>
       </li>
@@ -1325,7 +1325,7 @@ src="https://www.facebook.com/tr?id=1089931066809976&ev=PageView&noscript=1"></n
     </div>
     <span class="mgu-eyebrow">Eine echte, stressfreie Garantie</span>
     <h2 class="mgu-h2">Was ist, wenn mir nicht gefällt, <em>was ich bekomme?</em></h2>
-    <p class="mgu-p">Wenn du innerhalb von <b>14 Tagen</b> mit deinen Ergebnissen nicht zufrieden bist, schreib mir eine Nachricht und du bekommst <b>100 %</b> deines Geldes zurück. Aber überleg mal: Das Kit kostet <b>27 €</b>. Eine einzige verkaufte Kerze deckt das locker. Das einzige echte Risiko ist, zuzusehen, während dieser Markt noch völlig unerschlossen ist.</p>
+    <p class="mgu-p">Wenn du innerhalb von <b>14 Tagen</b> mit deinen Ergebnissen nicht zufrieden bist, schreib mir eine Nachricht und du bekommst <b>100 %</b> deines Geldes zurück. Aber überleg mal: Das Kit kostet <b>17 €</b>. Eine einzige verkaufte Kerze deckt das locker. Das einzige echte Risiko ist, zuzusehen, während dieser Markt noch völlig unerschlossen ist.</p>
     <div class="mgu-cta-box">
       <a href="#pricing" class="mgu-cta">Hier klicken, um zu starten <span class="arrow">&#8594;</span></a>
     </div>
@@ -1512,7 +1512,7 @@ src="https://www.facebook.com/tr?id=1089931066809976&ev=PageView&noscript=1"></n
 // server reads it from the connection when the request arrives.
 (function(){
   var ENDPOINT = '/api/track';
-  var market = window.__market || { currency: 'EUR', value: 27 };
+  var market = window.__market || { currency: 'EUR', value: 17 };
 
   var readCookie = function(name){
     var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
